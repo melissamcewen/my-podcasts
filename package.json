@@ -1,0 +1,27 @@
+{
+  "name": "mypodcasts",
+  "version": "0.0.1",
+  "description": "Get some podcasts",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "node-podcast-parser": "^2.3.0",
+    "express-rate-limit": "^3.3.2"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/my-podcasts"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}

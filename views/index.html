@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- COMMON TAGS -->
+    <meta charset="utf-8" />
+    <title>Just Podcasts</title>
+    <link rel="icon" href="favicon.png" />
+    <meta name="theme-color" content="#333300" />
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's manifest -->
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- import the webpage's client-side javascript files -->
+    <script src="/client.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>
+        🎧 Just My Podcasts ┉┉┉༝✧
+      </h1>
+    </header>
+
+    <main>
+      <audio id="audio_file" preload="auto" type="audio/mpeg">
+        <source id="audioSource" type="audio/mp3" src="https://cdn.glitch.com/e7c24dd4-4eff-4e6a-9ea3-3515a2c690c0%2Fsong.mp3?1551547998468" />
+      </audio>
+      <div id="audio_player" style="">
+        <progress id="progress-bar" min="0" max="100" value="0">0% played</progress>
+        <button id="btnPlayPause" class="play" title="play" accesskey="P" onclick="playPauseAudio();">⏯</button>
+      </div>
+      <section class="podcasts">
+        <ul id="podcasts"></ul>
+      </section>
+      <button id="update" onclick="updatePodcasts();" class="mybutton">👀 Check for new Podcasts 👀</button>
+
+      <a href="/feed.json">Older podcasts</a>
+    </main>
+
+    <footer>
+      <hr />
+      Made with <a href="https://glitch.com">Glitch</a>, you can get your own simple podcast app here ➡️
+      <a href="https://just-podcasts.glitch.me/">Just Podcasts</a>!
+    </footer>
+  </body>
+</html>

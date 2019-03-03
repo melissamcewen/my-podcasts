@@ -1,0 +1,106 @@
+/* A css file I found from 2002ish and adapted */
+
+body,
+p,
+td,
+div,
+button {
+  color: #333300;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: #cc9933;
+  font-weight: normal;
+  font-family: 'Lucida Console', 'Lucida Sans Typewriter', monaco, 'Bitstream Vera Sans Mono', monospace;
+  font-weight: 400;
+  line-height: 30px;
+}
+a:visited {
+  text-decoration: none;
+  color: #996633;
+}
+a:hover {
+  text-decoration: none;
+  color: #999999;
+}
+
+hr {
+  background-color: #fff;
+  border-top: 2px dashed #8c8b8b;
+}
+
+.mybutton {
+  border: 1px solid black;
+  padding: 5px;
+  margin: 2px;
+  white-space: nowrap;
+  background-color: white;
+
+}
+
+/* Emoji audio files */
+/* All HTML5 progress enabled browsers */
+progress {
+  /* Turns off styling - not usually needed, but good to know. */
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  /* gets rid of default border in Firefox and Opera. */
+  border: none;
+
+  /* Dimensions */
+  width: 257px;
+  height: 25px;
+}
+
+progress strong {
+  display: none;
+}
+
+progress,                          /* Firefox  */ 
+progress[role][aria-valuenow] {
+  /* Polyfill */
+  background: #9445b0 !important; /* !important is needed by the polyfill */
+}
+
+/* Chrome */
+progress::-webkit-progress-bar {
+  background: #9445b0;
+}
+
+/*
+ * Background of the progress bar value 
+ */
+
+/* Firefox */
+progress::-moz-progress-bar {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="70px" height="25px"><text x="0" y="20">🎤🎵🎹</text></svg>');
+  background-color: #373fff;
+}
+
+/* Chrome */
+progress::-webkit-progress-value {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="70px" height="25px"><text x="0" y="20">🎤🎵🎹</text></svg>');
+  background-color: #373fff;
+}
+
+/**
+ * Reset button styles.
+ * It takes a bit of work to achieve a neutral look.
+ */
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  /* show a hand cursor on hover; some argue that we
+  should keep the default arrow cursor for buttons */
+  cursor: pointer;
+}
