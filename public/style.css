@@ -43,52 +43,8 @@ hr {
 
 }
 
-/* Emoji audio files */
-/* All HTML5 progress enabled browsers */
-progress {
-  /* Turns off styling - not usually needed, but good to know. */
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
 
-  /* gets rid of default border in Firefox and Opera. */
-  border: none;
 
-  /* Dimensions */
-  width: 257px;
-  height: 25px;
-}
-
-progress strong {
-  display: none;
-}
-
-progress,                          /* Firefox  */ 
-progress[role][aria-valuenow] {
-  /* Polyfill */
-  background: #9445b0 !important; /* !important is needed by the polyfill */
-}
-
-/* Chrome */
-progress::-webkit-progress-bar {
-  background: #9445b0;
-}
-
-/*
- * Background of the progress bar value 
- */
-
-/* Firefox */
-progress::-moz-progress-bar {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="70px" height="25px"><text x="0" y="20">🎤🎵🎹</text></svg>');
-  background-color: #373fff;
-}
-
-/* Chrome */
-progress::-webkit-progress-value {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="70px" height="25px"><text x="0" y="20">🎤🎵🎹</text></svg>');
-  background-color: #373fff;
-}
 
 /**
  * Reset button styles.
