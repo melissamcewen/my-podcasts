@@ -106,6 +106,39 @@ function formatPodcasts(data) {
   player.load();
 }
 
+//Emoji Audio
+
+// Add a listener for the timeupdate event so we can update the progress bar
+
+progressBar.addEventListener('click', seek);
+
+function seek(e) {
+  var percent = e.offsetX / this.offsetWidth;
+  player.currentTime = percent * player.duration;
+  e.target.value = Math.floor(percent / 100);
+  e.target.innerHTML = progressBar.value + '% played';
+}
+
+// Stop the current media from playing, and return it to the start position
+function playPauseAudio() {
+
+  if (player.paused) {
+
+    player.play();
+  } else {
+    player.pause();
+  }
+}
+
+// Update the progress bar
+function updateProgressBar() {
+  // Work out how much of the media has played via the duration and currentTime parameters
+  var percentage = Math.floor((100 / player.duration) * player.currentTime);
+  // Update the progress bar's value
+  progressBar.value = percentage;
+  // Update the progress bar's text (for browsers that don't support the progress element)
+  progressBar.innerHTML = progressBar.title = percentage + '% played';
+}
 
 /* podcast specific */
 
@@ -127,6 +160,7 @@ var getSiblings = function(elem) {
 
 var changeAudio = function() {
   let sibs_a = getSiblings(this);
+  player.removeEventListener('timeupdate', updateProgressBar, false);
 
   let mp3;
   sibs_a.forEach((element) => {
@@ -141,7 +175,10 @@ var changeAudio = function() {
   player.setAttribute('data-playlist', trackNumber);
 
   player.load();
-  player.play();
+  /*player.addEventListener('loadedmetadata', function(_event) {
+    player.addEventListener('timeupdate', updateProgressBar, false);
+  });*/
+  player.play(); //call this to just preload the audio without playing
 };
 
 player.onended = function() {
@@ -152,6 +189,7 @@ player.onended = function() {
     let episodeNumber = episodes[i].getAttribute('data-playlist');
     if (episodeNumber == nextTrack) {
       let mp3 = episodes[i].getElementsByTagName('a')[0].href;
+      player.removeEventListener('timeupdate', updateProgressBar, false);
      
       source.src = mp3;
       player.setAttribute('data-playlist', nextTrack);
@@ -163,7 +201,9 @@ player.onended = function() {
 };
 
 
-
+ player.addEventListener('loadedmetadata', function(_event) {
+        player.addEventListener('timeupdate', updateProgressBar, false);
+      });
 
 // service worker
 

@@ -3,18 +3,18 @@
   "short_name": "Podcasts",
   "theme_color": "#333300",
   "background_color": "#cc9933",
-  "display": "minimal-ui",
+  "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
   "icons": [
     {
-      "src": "icon-192x192.png",
+      "src": "/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512x512.png",
+      "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
