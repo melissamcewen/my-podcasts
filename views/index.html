@@ -4,6 +4,9 @@
     <!-- COMMON TAGS -->
     <meta charset="utf-8" />
     <title>Just Podcasts</title>
+    <!-- Search Engine -->
+    <meta name="description" content="Simple minimalist podcast app" />
+    <meta name="keywords" content="emoji, convert text to emoji, dango" />
     <link rel="icon" href="favicon.png" />
     <meta name="theme-color" content="#333300" />
 
@@ -11,18 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- since ios doesn't pay enough attention to manifest.json -->
-    <meta name="apple-mobile-web-app-title" content="My Podcasts" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png" />
-    
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css" />
 
     <!-- import the webpage's manifest -->
+
     <link rel="manifest" href="/manifest.json" />
 
     <!-- import the webpage's client-side javascript files -->
@@ -36,10 +32,13 @@
     </header>
 
     <main>
-      <audio id="audio_file" preload="auto" type="audio/mpeg" controls="">
-        <source id="audioSource" type="audio/mp3" src="" />
+      <audio id="audio_file" preload="auto" type="audio/mpeg">
+        <source id="audioSource" type="audio/mp3" src="https://cdn.glitch.com/e7c24dd4-4eff-4e6a-9ea3-3515a2c690c0%2Fsong.mp3?1551547998468" />
       </audio>
-
+      <div id="audio_player" style="">
+        <progress id="progress-bar" min="0" max="100" value="0">0% played</progress>
+        <button id="btnPlayPause" class="play" title="play" accesskey="P" onclick="playPauseAudio();">⏯</button>
+      </div>
       <section class="podcasts">
         <ul id="podcasts"></ul>
       </section>
